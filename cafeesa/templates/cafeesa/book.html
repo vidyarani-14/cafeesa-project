@@ -1,0 +1,64 @@
+{% extends 'cafeesa/base.html' %}
+{% block content %}
+{% load static %}
+
+ <!-- contact section -->
+
+ <section class="contact_section layout_padding">
+   <div class="contact_bg_box">
+     <img src="{% static 'public/images/contact-bg.jpg' %}" alt="">
+   </div>
+   <div class="container">
+     <div class="heading_container heading_center">
+       <h2>
+         Book A Table
+       </h2>
+     </div>
+     <div class="">
+       <div class="row">
+         <div class="col-md-7 mx-auto">
+           <form action="" method="POST">
+             {% csrf_token %}
+             <div class="contact_form-container">
+               <div class="row">
+                 <div class="col-sm-6">
+                   <input type="text" name="first_name" placeholder="Full Name" />
+                 </div>
+                 <div class="col-sm-6">
+                   <input type="email" name="email_field" placeholder="Email " />
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-sm-6">
+                   <input type="text" name="phone_number" placeholder="Phone Number" />
+                 </div>
+                 <div class="col-sm-6">
+                   <input type="number"  placeholder="Number of People" />
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-sm-6">
+                   <input type="date" name="geeks_field" placeholder="Select Date" />
+                 </div>
+                 <div class="col-sm-6">
+                   <input type="time" name="geeks_field" placeholder="Select Time" />
+                 </div>
+               </div>
+               <div class="">
+                 <input type="text" name="body" placeholder="Aditional Note" class="message_input" />
+               </div>
+               <div class="btn-box ">
+                 <button type="submit">
+                   Send
+                 </button>
+               </div>
+             </div>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+
+{% endblock %}

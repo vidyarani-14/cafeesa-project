@@ -1,0 +1,54 @@
+{% extends 'pluto-html/base_1.html' %}
+{% block content %}
+{% load static %}
+
+      <style>
+         table {
+           font-family: arial, sans-serif;
+           border-collapse: collapse;
+           width: 100%;
+           color: #030303;
+         }
+   
+         td,
+         th {
+           border: 1px solid #030303;
+           text-align: left;
+           padding: 8px;
+         }
+       </style>
+                 <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Bookings</h2>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     </div>
+
+                     <table>
+                        <tr>
+                          <th>Sl.NO</th>
+                          <th>Name</th>
+                          <th>EMAIL</th>
+                          <th>PHONE</th>
+                          <th>Time</th>
+                          <th>MESSAGE</th>
+                        </tr>
+                        {% for product in context %}
+                        <tr>
+                          <td>{{ product.id}}</td>
+                          <td>{{ product.first_name}}</td>
+                          <td>{{product.email_field}}</td>
+                          <td>{{ product.phone_number}}</td>
+                          <td>{{product.geeks_field}}</td>
+                          <td>{{product.body}}</td>
+                        </tr>
+                        {% endfor %}
+                      </table>
+                      {% endblock %}
+
