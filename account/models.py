@@ -18,10 +18,23 @@ class SlotBooking(models.Model):
         return self.title
 
 class Sliderimg(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/',null=True)
     title = models.CharField(max_length=255,null=True)
-    # pub_date = models.DateTimeField(null=True)
+    pub_date = models.DateTimeField(null=True)
     body = models.TextField()
   
   
-  
+class test(models.Model):
+    image = models.ImageField(upload_to='images/',null=True)
+    title = models.CharField(max_length=255,null=True)
+    body = models.TextField()
+
+class test_1(models.Model):
+    image = models.ImageField(upload_to='images/',null=True)
+    title = models.CharField(max_length=255,null=True)
+    body = models.TextField()
+
+class test_2(models.Model):
+    image = models.ImageField(upload_to='images/',null=True)
+    title = models.CharField(max_length=255,null=True)
+    body = models.TextField()    

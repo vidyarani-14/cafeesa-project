@@ -10,9 +10,9 @@
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   <!-- slider section -->
   <section class="slider_section position-relative">
-    {% for s in product.all %}
+    {% for s in s.all %}
     <div class="slider_bg_box">
-      <img src="{{ s.image.url }}" alt="">
+      <img style="position: auto;" src="{{ s.image.url }}" alt="">
     </div>
     <div class="slider_bg"></div>
     <div class="container">
@@ -22,10 +22,10 @@
            {{  s.title }}
           </h1>
           <p>
-            {{ s.title }}
+            {{ s.body }}
           </p>
           <div>
-            <a href="" class="slider-link">
+            <a href="book" class="slider-link">
               Book A Table
             </a>
           </div>
@@ -132,35 +132,35 @@
       <div class="">
         <div class="row">
           <div class="col-md-7 mx-auto">
-            <form action="#">
-              
+            <form action="" method="POST">
+              {% csrf_token %}
               <div class="contact_form-container">
                 <div class="row">
                   <div class="col-sm-6">
-                    <input type="text" placeholder="Full Name" />
+                    <input type="text" name="title" placeholder="Full Name" />
                   </div>
                   <div class="col-sm-6">
-                    <input type="email" placeholder="Email " />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <input type="text" placeholder="Phone Number" />
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="number" placeholder="Number of People" />
+                    <input type="email" name="email_field" placeholder="Email " />
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
-                    <input type="date" placeholder="Select Date" />
+                    <input type="text" name="phone_number" placeholder="Phone Number" />
                   </div>
                   <div class="col-sm-6">
-                    <input type="time" placeholder="Select Time" />
+                    <input type="number"  placeholder="Number of People" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input type="date" name="geeks_field" placeholder="Select Date" />
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="time" name="geeks_field" placeholder="Select Time" />
                   </div>
                 </div>
                 <div class="">
-                  <input type="text" placeholder="Aditional Note" class="message_input" />
+                  <input type="text" name="body" placeholder="Aditional Note" class="message_input" />
                 </div>
                 <div class="btn-box ">
                   <button type="submit">
@@ -188,60 +188,59 @@
       </div>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
+          {% for s in t.all %}
           <div class="carousel-item active">
             <div class="box">
               <div class="img-box">
-                <img src="{% static 'public/images/client.jpg' %}" alt="">
+                <img src="{{ s.image.url }}" alt="">
               </div>
               <div class="detail-box">
                 <h4>
-                  Minim Veniam
+                  {{ s.title }}
                 </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip
+                  {{ s.body }}
                 </p>
               </div>
             </div>
+            
           </div>
           <div class="carousel-item ">
+            {% for s in t1.all %}
             <div class="box">
               <div class="img-box">
-                <img src="{% static 'public/images/client.jpg' %}" alt="">
+                <img src="{{ s.image.url }}" alt="">
               </div>
               <div class="detail-box">
                 <h4>
-                  Minim Veniam
+                  {{ s.title }}
                 </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip
+                  {{ s.body }}
                 </p>
               </div>
             </div>
+            
+ 
+            {% endfor %}
           </div>
           <div class="carousel-item ">
+            {% for s in t2.all %}
             <div class="box">
               <div class="img-box">
-                <img src="{% static 'public/images/client.jpg' %}" alt="">
+                <img src="{{ s.image.url }}" alt="">
               </div>
               <div class="detail-box">
                 <h4>
-                  Minim Veniam
+                  {{ s.title }}
                 </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip
+                  {{ s.body }}
                 </p>
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
         <div class="carousel_btn-box">
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -255,7 +254,9 @@
         </div>
       </div>
     </div>
+    {% endfor %}
   </section>
+
 
   <!-- end client section -->
 

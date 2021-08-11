@@ -13,60 +13,59 @@
       </div>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
+          {% for s in t.all %}
           <div class="carousel-item active">
             <div class="box">
               <div class="img-box">
-                <img src="{% static 'public/images/client.jpg' %}" alt="">
+                <img src="{{ s.image.url }}" alt="">
               </div>
               <div class="detail-box">
                 <h4>
-                  Minim Veniam
+                  {{ s.title }}
                 </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip
+                  {{ s.body }}
                 </p>
               </div>
             </div>
+            
           </div>
           <div class="carousel-item ">
+            {% for s in t1.all %}
             <div class="box">
               <div class="img-box">
-                <img src="{% static 'public/images/client.jpg' %}" alt="">
+                <img src="{{ s.image.url }}" alt="">
               </div>
               <div class="detail-box">
                 <h4>
-                  Minim Veniam
+                  {{ s.title }}
                 </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip
+                  {{ s.body }}
                 </p>
               </div>
             </div>
+            
+ 
+            {% endfor %}
           </div>
           <div class="carousel-item ">
+            {% for s in t2.all %}
             <div class="box">
               <div class="img-box">
-                <img src="{% static 'public/images/client.jpg' %}" alt="">
+                <img src="{{ s.image.url }}" alt="">
               </div>
               <div class="detail-box">
                 <h4>
-                  Minim Veniam
+                  {{ s.title }}
                 </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip
+                  {{ s.body }}
                 </p>
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
         <div class="carousel_btn-box">
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -80,6 +79,7 @@
         </div>
       </div>
     </div>
+    {% endfor %}
   </section>
 
   <!-- end client section -->

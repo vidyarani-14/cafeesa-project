@@ -32,7 +32,7 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 INSTALLED_APPS = [
       
-  
+    'crispy_forms',
     'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',

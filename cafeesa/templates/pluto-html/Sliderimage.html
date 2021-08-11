@@ -1,0 +1,71 @@
+{% extends 'pluto-html/base_1.html' %}
+{% block content %}
+{% load static %}
+<style>
+   table {
+     font-family: arial, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+     color: #030303;
+   }
+
+   td,
+   th {
+     border: 1px solid #030303;
+     text-align: left;
+     padding: 8px;
+   }
+   
+ </style>
+
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Background Image</h2>
+                           </div>
+                        </div>
+                     </div>
+
+                     <table>
+                        <tr>
+                          <th>Sl.NO</th>
+                          <th>IMAGE</th>
+                          <th>TITLE</th>
+                          <th>BODY</th>
+                          <th>DATE & TIME</th>
+                          <th>EDIT</th>
+                          <th>DELETE</th>                         
+                        </tr>
+                        {% for s1 in s.all %}
+                        <tr>
+                          <td>{{ s1.id}}</td>
+                          <td>{{ s1.image}}</td>
+                          <td>{{s1.title}}</td>
+                          <td>{{ s1.body}}</td>
+                          <td>{{ s1.pub_date}}</td>
+                          <td style="padding: 10px">
+                      <a href="{% url 'edit' s1.id %}"
+                        ><button type="button" class="btn btn-secondary">
+                          EDIT BANNER
+                        </button></a
+                      >
+                      <td style="padding: 10px">
+                        <a href="{% url 'delete' s1.id %}"
+                          ><button type="button" class="btn btn-danger">Delete</button></a
+                        >
+                      </td>
+                    
+                         
+                        </tr>
+                        {% endfor %}
+                      </table>
+                      <br/> <br/> <br/> <br/>
+                <center><a href="{% url 'add' %}"
+                  ><button type="button" class="btn btn-primary">ADD</button></a></center>
+                    
+
+                      
+                     {% endblock %}

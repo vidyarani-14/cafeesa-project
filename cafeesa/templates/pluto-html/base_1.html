@@ -76,7 +76,7 @@
                            </li>
                         </ul>
                      </li>
-                     <!-- <li><a href="{% url 'widgets' %}"><i class="fa fa-clock-o orange_color"></i> <span>Widgets</span></a></li> -->
+                     <li><a href="{% url 'Sliderimage' %}"><i class="fa fa-diamond purple_color"></i> <span>Slider Image</span></a></li>
                      <!-- <li>
                         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
                         <ul class="collapse list-unstyled" id="element">
@@ -100,6 +100,8 @@
                         <a href="{% url 'bookings' %}">
                         <i class="fa fa-paper-plane red_color"></i> <span>Bookings</span></a>
                      </li>
+                     <li><a href="{% url 'testimonial_1' %}"><i class="fa fa-table purple_color2"></i> <span>Testimonial</span></a></li>
+                     <li>
                      <!-- <li class="active">
                         <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
                         <ul class="collapse list-unstyled" id="additional_page">
@@ -110,7 +112,7 @@
                               <a href="{% url 'project' %}">> <span>Projects</span></a>
                            </li>
                            <li>
-                              <a href="{% url 'login' %}">> <span>Login</span></a>
+                            
                            </li>
                            <li>
                               <a href="{% url '404_error' %}">> <span>404 Error</span></a>
@@ -120,6 +122,7 @@
                      <!-- <li><a href="{% url 'map' %}"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
                      <li><a href="{% url 'charts' %}"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li> -->
                      <li><a href="{% url 'settings' %}"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
+                     
                   </ul>
                </div>
             </nav>
@@ -148,7 +151,7 @@
                                        <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
                                        <a class="dropdown-item" href="{% url 'settings' %}">Settings</a>
                                        <a class="dropdown-item" href="help.html">Help</a>
-                                       <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                       <a class="dropdown-item" href="{% url 'logout' %}"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                     </div>
                                  </li>
                               </ul>

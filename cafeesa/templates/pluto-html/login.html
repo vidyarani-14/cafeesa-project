@@ -46,12 +46,20 @@
                         <img width="210" src="{% static 'pluto/images/logo/logo.png' %}" alt="#" />
                      </div>
                   </div>
+                  {% if error %}
+                  {{ error }}
+                  <br />
+                  <br />
+                  {% endif %}
+                  <br />
+
                   <div class="login_form">
-                     <form>
+                     <form method="POST" action="{% url 'login' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <fieldset>
                            <div class="field">
                               <label class="label_field">User Name</label>
-                              <input type="text" name="text" placeholder="name" />
+                              <input type="text" name="email" placeholder="email " />
                            </div>
                            <div class="field">
                               <label class="label_field">Password</label>

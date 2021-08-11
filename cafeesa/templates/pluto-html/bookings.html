@@ -38,17 +38,41 @@
                           <th>PHONE</th>
                           <th>Time</th>
                           <th>MESSAGE</th>
+                          <th>Edit</th>
+                          <th>DELETE</th>
+
+
+
                         </tr>
                         {% for product in context %}
                         <tr>
                           <td>{{ product.id}}</td>
-                          <td>{{ product.first_name}}</td>
+                          <td>{{ product.title}}</td>
                           <td>{{product.email_field}}</td>
                           <td>{{ product.phone_number}}</td>
                           <td>{{product.geeks_field}}</td>
                           <td>{{product.body}}</td>
-                        </tr>
-                        {% endfor %}
-                      </table>
-                      {% endblock %}
-
+                          <td style="padding: 10px">
+                            <a href="{% url 'edit_1' product.id %}"
+                              ><button type="button" class="btn btn-secondary">
+                                EDIT SLOT
+                              </button></a
+                            >
+                            <td style="padding: 10px">
+                              <a href="{% url 'delete_1' product.id %}"
+                                ><button type="button" class="btn btn-danger">Delete</button></a
+                              >
+                            </td>
+                          
+                               
+                              </tr>
+                              {% endfor %}
+                            </table>
+                            <br/> <br/> <br/> <br/>
+                      <center><a href="{% url 'add_1' %}"
+                        ><button type="button" class="btn btn-primary">ADD SLOT</button></a></center>
+                          
+      
+                            
+                           {% endblock %}
+                      
